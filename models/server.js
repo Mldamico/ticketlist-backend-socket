@@ -20,7 +20,7 @@ class Server {
     this.io = socketio(this.server, {
       /* configuraciones */
     });
-    this.sockets = new Socket(this.io);
+    this.sockets = new Sockets(this.io);
   }
 
   middlewares() {
