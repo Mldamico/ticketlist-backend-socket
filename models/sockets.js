@@ -13,6 +13,13 @@ class Sockets {
         const nuevoTicket = this.ticketList.crearTicket();
         callback(nuevoTicket);
       });
+      socket.on("siguiente-ticket-trabajar", (usuario, callback) => {
+        const suTicket = this.ticketList.asignarTicket(
+          usuario.agente,
+          usuario.escritorio
+        );
+        callback(suTicket);
+      });
     });
   }
 }

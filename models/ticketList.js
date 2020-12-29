@@ -26,9 +26,11 @@ class TicketList {
       return null;
     }
     const siguienteTicket = this.pendientes.shift();
+
     siguienteTicket.agente = agente;
     siguienteTicket.escritorio = escritorio;
     this.asignados.unshift(siguienteTicket);
+    return siguienteTicket;
   }
 }
 
